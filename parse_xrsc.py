@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Parser for TikTok/ByteDance NxString (.xrsc) localization files
-Format: Binary string resource format used by TikTok for i18n
-"""
 
 import struct
 import sys
@@ -134,3 +130,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
