@@ -1,0 +1,108 @@
+# ===================
+# APK Decompiler .gitignore
+# ===================
+
+# Decompiled outputs
+*_decompiled/
+decompiled/
+converted/
+
+# APK/XAPK files (user input)
+*.apk
+*.xapk
+*.aab
+
+# Downloaded tools (auto-downloaded by script)
+decompiler_tools/
+jadx/
+ghidra*/
+jdk*/
+openjdk*/
+
+# Tool binaries
+apktool_*.jar
+apktool.jar
+apktool
+apktool.bat
+
+# Large archives
+*.zip
+!*.zip.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+.temp/
+tmp/
+
+# Test outputs
+test_output/
+test_*/
+
+# Extracted contents
+xapk_extracted/
+
+# Binary dumps
+binary_dumps/
+
+# Signatures and certs (contain app-specific data)
+signatures/
+certificates/
+
+# XRSC converted files
+xrsc/
+
+# JADX project files
+*.jadx

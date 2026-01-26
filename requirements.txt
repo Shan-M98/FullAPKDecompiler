@@ -1,0 +1,49 @@
+# APK Decompiler Requirements
+#
+# Python dependencies (install with: pip install -r requirements.txt)
+#
+# Note: The main decompilation tools are NOT Python packages.
+# They will be automatically downloaded by the script or can be installed manually:
+#
+# Required External Tools:
+# ========================
+# 1. Java JDK 11+ (required for apktool and jadx)
+#    - Download: https://adoptium.net/
+#    - Set JAVA_HOME environment variable
+#
+# 2. apktool (auto-downloaded by script)
+#    - Manual: https://github.com/iBotPeaches/Apktool/releases
+#
+# 3. jadx (auto-downloaded by script)
+#    - Manual: https://github.com/skylot/jadx/releases
+#
+# 4. Ghidra (optional, for .so decompilation)
+#    - Download: https://ghidra-sre.org/
+#    - Extract to apktool folder as ghidra_11.2.1_PUBLIC/
+#
+# Python Dependencies:
+# ====================
+# The script uses only standard library modules, no pip packages required!
+#
+# Standard library modules used:
+# - argparse
+# - hashlib
+# - io
+# - json
+# - os
+# - platform
+# - shutil
+# - struct
+# - subprocess
+# - sys
+# - tempfile
+# - urllib.request
+# - zipfile
+# - concurrent.futures
+# - pathlib
+# - typing
+
+# Optional: For enhanced functionality, you can install these:
+# colorama>=0.4.6      # Colored terminal output (optional)
+# tqdm>=4.66.0         # Progress bars (optional)
+# lief>=0.14.0         # Enhanced ELF/SO parsing (optional)
