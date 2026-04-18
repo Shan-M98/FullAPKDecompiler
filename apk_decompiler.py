@@ -185,11 +185,20 @@ class APKDecompiler:
                 return False
         print(f"  apktool: {self.apktool_jar}")
 
-        # Setup jadx
+        # Setup jadx - search common locations first
         jadx_bin_name = "jadx.bat" if platform.system() == "Windows" else "jadx"
+        script_dir = Path(__file__).resolve().parent
+        home = Path.home()
         jadx_locations = [
+            # Existing installations in known locations
+            home / "Pentesting" / "Mobile" / "Tools" / "jadx-1.5.5" / "bin" / jadx_bin_name,
+            script_dir.parent / "jadx-1.5.5" / "bin" / jadx_bin_name,
+            script_dir / "decompiler_tools" / "jadx" / "bin" / jadx_bin_name,
             self.tools_dir / "jadx" / "bin" / jadx_bin_name,
             self.apk_path.parent / "jadx" / "bin" / jadx_bin_name,
+            # Search for any jadx in parent dirs
+            *sorted(script_dir.parent.glob("jadx*/bin/" + jadx_bin_name), reverse=True),
+            *sorted(home.glob("**/jadx*/bin/" + jadx_bin_name)),
         ]
 
         self.jadx_bin = None
@@ -212,11 +221,15 @@ class APKDecompiler:
                 os.chmod(self.jadx_bin, 0o755)
         print(f"  jadx: {self.jadx_bin}")
 
-        # Setup Ghidra - search multiple locations
+        # Setup Ghidra - search common locations first
         ghidra_locations = [
+            home / "Pentesting" / "Mobile" / "Tools" / "ghidra_12.0.4_PUBLIC",
+            script_dir.parent / "ghidra_12.0.4_PUBLIC",
+            script_dir / "ghidra_12.0.4_PUBLIC",
             self.tools_dir / "ghidra",
             self.apk_path.parent / "ghidra_11.2.1_PUBLIC",
-            *self.apk_path.parent.glob("ghidra*"),
+            *sorted(script_dir.parent.glob("ghidra*"), reverse=True),
+            *sorted(home.glob("**/ghidra_*_PUBLIC"), reverse=True),
         ]
 
         self.ghidra_dir = None
